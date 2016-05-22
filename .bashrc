@@ -21,7 +21,7 @@ HISTFILESIZE=2000
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
         . /etc/bash_completion
-fi
+    fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -47,9 +47,9 @@ if [ $(id -u) -eq 0 ];
 then # you are root, set red colour prompt
   PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
 else # normal
-    PS1="\u\$(__git_ps1) $ $reset"
+    # PS1="\u\$(__git_ps1) $ "
     # PS1="$purple\u$green\$(__git_ps1)$blue $ $reset"
-    # PS1='\u@\h:$(__git_ps1) $'
+    PS1="\u@\h\$(__git_ps1) $ "
 fi
 
 # enable color support of ls and also add handy aliases
@@ -62,6 +62,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# (shared aliases)
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
