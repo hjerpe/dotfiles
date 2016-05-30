@@ -14,16 +14,16 @@ set numberwidth=2
 " Ignore case when searching
 set ignorecase
 
-" " When searching try to be smart about cases 
+" When searching try to be smart about cases 
 set smartcase
 
-" " Highlight search results
+" Highlight search results
 set hlsearch
 
-" " Makes search act like search in modern browsers
+" Makes search act like search in modern browsers
 set incsearch
 
-" " Don't redraw while executing macros (good performance config)
+" Don't redraw while executing macros (good performance config)
 set lazyredraw
 
 nmap <c-A> ggvG$
@@ -34,12 +34,23 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 " Start e: %%/ will expand the file from the current directory
 cabbr <expr> %% expand('%:p:h')
 
 nmap <Esc><Esc> :w<CR>
-
 map <leader>rr :source ~/.vimrc<CR>
+
+" emacs in command line
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+
 " Pythor maps
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
@@ -53,5 +64,3 @@ colorscheme zenburn
 set colorcolumn=79
 
 highlight ColorColumn ctermbg=0
-
-nnoremap <C-y> "+y
